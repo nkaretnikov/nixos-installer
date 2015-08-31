@@ -1,3 +1,5 @@
+set -e
+
 PROG=`basename "$0"`
 
 function usage {
