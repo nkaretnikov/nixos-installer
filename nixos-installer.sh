@@ -64,5 +64,6 @@ mkdir /mnt/boot
 mount "${DISK}2" /mnt/boot
 
 nixos-generate-config --root /mnt
+cp /mnt/etc/nixos/configuration.nix /mnt/etc/nixos/configuration.nix.orig
 cp $CONF /mnt/etc/nixos/configuration.nix
 nixos-install
