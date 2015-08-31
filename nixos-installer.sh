@@ -31,7 +31,8 @@ if [ $ANSWER != "YES" ]; then
   exit 1
 fi
 
-dd if=/dev/zero of=$DISK iflag=nocache oflag=direct bs=4096
+# Do not exit when dd returns a non-zero exit status.
+dd if=/dev/zero of=$DISK iflag=nocache oflag=direct bs=4096 && :
 
 parted --script -a opt $DISK mklabel gpt
 
