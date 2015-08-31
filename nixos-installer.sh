@@ -41,7 +41,7 @@ parted --script -a opt $DISK mkpart primary 3MiB 131MiB
 parted --script -a opt $DISK name 2 boot
 parted --script -a opt $DISK set 2 boot on
 
-parted --script -a opt $DISK mkpart primary 131MiB -1
+parted --script -a opt $DISK -- mkpart primary 131MiB -1
 parted --script -a opt $DISK name 3 rootfs
 
 mkfs.ext3 "${DISK}1"
