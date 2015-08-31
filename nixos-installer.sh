@@ -66,5 +66,7 @@ mount "${DISK}2" /mnt/boot
 
 nixos-generate-config --root /mnt
 cp /mnt/etc/nixos/configuration.nix /mnt/etc/nixos/configuration.nix.orig
+sed -i s#DISK2#\""${DISK}2"\"# $CONF
+sed -i s#DISK3#\""${DISK}3"\"# $CONF
 cp $CONF /mnt/etc/nixos/configuration.nix
 nixos-install

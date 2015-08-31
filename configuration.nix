@@ -17,7 +17,7 @@
   boot.kernelPackages = pkgs.linuxPackages_3_18;
   boot.initrd.kernelModules = [ "fbcon" ];
   boot.initrd.luks.devices = [
-    { name = "main"; device = "/dev/sda3"; preLVM = true; }
+    { name = "main"; device = DISK3; preLVM = true; }
   ];
 
   fileSystems = [ {
@@ -28,7 +28,7 @@
     device = "/dev/main/home";
   } {
     mountPoint = "/boot";
-    device = "/dev/sda2";
+    device = DISK2;
   }
   ];
 
